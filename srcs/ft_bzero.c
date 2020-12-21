@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 00:26:14 by sangh             #+#    #+#             */
-/*   Updated: 2020/12/21 14:41:21 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/21 15:49:53 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/21 17:20:58 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-void	ft_swap(int *a, int *b)
+void	ft_bzero(void *s, size_t n)
 {
-	int		t;
-
-	t = *a;
-	*a = *b;
-	*b = t;
+	ft_memset(s, 0, n);
 }

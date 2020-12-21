@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sangh <sanghkim@student.42seoul.kr>        +#+  +:+       +#+        */
+/*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 23:14:47 by sangh             #+#    #+#             */
-/*   Updated: 2020/11/06 02:24:59 by sangh            ###   ########.fr       */
+/*   Updated: 2020/12/21 19:46:23 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdio.h>
+# include <string.h>
 # include "stdlib.h"
 # include "unistd.h"
 # include "libgen.h"
@@ -33,5 +35,11 @@ size_t	ft_strlcat(char *dst, char *src, size_t detsize);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 char	*ft_strstr(char *str, char *to_find);
+void	ft_memeset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif

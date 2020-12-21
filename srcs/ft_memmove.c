@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 00:26:14 by sangh             #+#    #+#             */
-/*   Updated: 2020/12/21 14:41:21 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/21 17:55:24 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/21 19:43:43 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void	ft_swap(int *a, int *b)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int		t;
+	char	*d;
+	char	*s;
 
-	t = *a;
-	*a = *b;
-	*b = t;
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	else if (dst > src)
+	{
+		d = (char *)dst + len - 1;
+		s = (char *)src + len - 1;
+		while (len--)
+			*d-- = *s--;
+	}
+	return (dst);
 }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 00:26:14 by sangh             #+#    #+#             */
-/*   Updated: 2020/12/21 14:41:21 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/21 19:45:51 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void	ft_swap(int *a, int *b)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		t;
+	char	*cur;
 
-	t = *a;
-	*a = *b;
-	*b = t;
+	cur = (char *)s;
+	while (n--)
+	{
+		if (*cur == c)
+			return (cur);
+		cur++;
+	}
+	return (NULL);
 }

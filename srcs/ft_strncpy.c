@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sangh <sanghkim@student.42seoul.kr>        +#+  +:+       +#+        */
+/*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 00:41:37 by sangh             #+#    #+#             */
-/*   Updated: 2020/11/06 02:39:01 by sangh            ###   ########.fr       */
+/*   Updated: 2020/12/21 14:37:02 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strncpy(char *dst, char *src, size_t n)
 		dst[i] = src[i];
 		i++;
 	}
-	while(i < n)
+	while (i < n)
 	{
 		dst[i] = 0;
 		i++;
