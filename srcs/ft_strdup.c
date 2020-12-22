@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/22 15:42:42 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/22 15:47:06 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/22 15:50:18 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	char	*cur;
+	size_t	len;
+	size_t	i;
+	char	*dst;
 
-	cur = (char *)s;
-	while (n--)
-	{
-		if (*cur == c)
-			return (cur);
-		cur++;
-	}
-	return (NULL);
+	len = ft_strlen(s);
+	if (!(dst = malloc(len + 1)))
+		return (0);
+	ft_memcpy(dst, s, len);
+	dst[len] = 0;
+	return (dst);
 }

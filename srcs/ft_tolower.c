@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/22 15:42:42 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/22 15:34:34 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/22 15:38:43 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_tolower(int c)
 {
-	char	*cur;
-
-	cur = (char *)s;
-	while (n--)
-	{
-		if (*cur == c)
-			return (cur);
-		cur++;
-	}
-	return (NULL);
+	if ('A' <= c && c <= 'Z')
+		return (c + ('a' - 'A'));
+	return (c);
 }

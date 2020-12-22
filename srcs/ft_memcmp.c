@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/22 15:42:42 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/22 13:19:27 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/22 13:34:04 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*cur;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	cur = (char *)s;
+	if (s1 == s2 || n == 0)
+		return (0);
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	while (n--)
 	{
-		if (*cur == c)
-			return (cur);
-		cur++;
+		if (*str1 != *str2)
+			return (*str1 - *str2);
+		str1++;
+		str2++;
 	}
-	return (NULL);
+	return (0);
 }

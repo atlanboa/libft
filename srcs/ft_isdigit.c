@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/22 15:42:42 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/22 15:26:37 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/22 15:31:00 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_isdigit(int c)
 {
-	char	*cur;
-
-	cur = (char *)s;
-	while (n--)
-	{
-		if (*cur == c)
-			return (cur);
-		cur++;
-	}
-	return (NULL);
+	return ('0' <= c && c <= '9');
 }

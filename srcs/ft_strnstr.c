@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/22 15:42:42 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/22 14:29:14 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/22 15:45:39 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*cur;
+	size_t	n;
 
-	cur = (char *)s;
-	while (n--)
+	if (*needle == '\0')
+		return ((char *)haystack);
+	n = ft_strlen(needle);
+	while (*haystack != '\0' && len-- >= n)
 	{
-		if (*cur == c)
-			return (cur);
-		cur++;
+		if (*haystack == *needle && ft_memcmp(haystack, needle, n) == 0)
+			return ((char *)haystack);
+		haystack++;
 	}
 	return (NULL);
 }

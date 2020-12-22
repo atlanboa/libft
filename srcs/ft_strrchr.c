@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/22 15:42:42 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/22 13:41:50 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/22 14:22:44 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*cur;
 
-	cur = (char *)s;
-	while (n--)
+	cur = (char *)s + ft_strlen(s);
+	while (*cur == c)
 	{
-		if (*cur == c)
-			return (cur);
-		cur++;
+		if (cur == s)
+			return (NULL);
+		cur--;
 	}
-	return (NULL);
+	return (cur);
 }

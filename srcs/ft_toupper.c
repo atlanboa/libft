@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:43:57 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/22 15:42:42 by sanghkim         ###   ########.fr       */
+/*   Created: 2020/12/22 15:33:43 by sanghkim          #+#    #+#             */
+/*   Updated: 2020/12/22 15:34:07 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_toupper(int c)
 {
-	char	*cur;
-
-	cur = (char *)s;
-	while (n--)
-	{
-		if (*cur == c)
-			return (cur);
-		cur++;
-	}
-	return (NULL);
+	if ('a' <= c && c <= 'z')
+		return (c + ('A' - 'a'));
+	return (c);
 }
