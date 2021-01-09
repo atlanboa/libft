@@ -11,5 +11,7 @@
 		"string_view": "c",
 		"unordered_map": "c",
 		"vector": "c"
-	}
+	},
+	"42norminette.command": "norminette", // Default: 
+  	"42norminette.maxErrors": "all" // Default: 'all',
 }

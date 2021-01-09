@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 20:16:51 by sanghkim          #+#    #+#             */
-/*   Updated: 2021/01/09 13:41:03 by sanghkim         ###   ########.fr       */
+/*   Updated: 2021/01/09 21:01:09 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char		**ft_split_free(char **ptr)
 	{
 		if (ptr[idx])
 			free(ptr[idx]);
-		idx++;	
+		idx++;
 	}
 	if (ptr)
 		free(ptr);
@@ -75,4 +75,9 @@ char			**ft_split(char const *s, char c)
 	}
 	ret[idx] = NULL;
 	return (ret);
+}
+
+int	main(void)
+{
+	ft_split("asdfasdfasdf asdfasdf asdfasd fasdf", ' ');
 }

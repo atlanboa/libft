@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sangh <sanghkim@student.42seoul.kr>        +#+  +:+       +#+        */
+/*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 00:22:28 by sangh             #+#    #+#             */
-/*   Updated: 2020/11/06 00:22:55 by sangh            ###   ########.fr       */
+/*   Created: 2020/11/05 23:22:29 by sangh             #+#    #+#             */
+/*   Updated: 2021/01/09 20:18:11 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-int		ft_is_negative(int n)
+size_t		ft_strlen(const char *str)
 {
-	return (n < 0);
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

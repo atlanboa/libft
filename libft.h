@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 23:14:47 by sangh             #+#    #+#             */
-/*   Updated: 2020/12/30 17:24:42 by sanghkim         ###   ########.fr       */
+/*   Updated: 2021/01/09 20:47:36 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,11 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-void			ft_putstr(char *str);
 size_t			ft_strlen(const char *str);
-int				ft_is_negative(int n);
-void			ft_swap(int *a, int *b);
-char			*ft_strcpy(char *dst, char *src);
-char			*ft_strncpy(char *dst, char *src, size_t n);
 size_t			ft_strlcpy(char *dst, char *src, size_t dstsize);
 char			*ft_strcat(char *s1, char *s2);
-char			*ft_strncat(char *s1, char *s2, size_t n);
 size_t			ft_strlcat(char *dst, char *src, size_t detsize);
-int				ft_strcmp(char *s1, char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char			*ft_strstr(char *str, char *to_find);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
