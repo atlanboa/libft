@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 20:16:51 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/30 18:15:22 by sanghkim         ###   ########.fr       */
+/*   Updated: 2021/01/09 13:37:01 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static size_t	get_word_cnt(char *str, char c)
 			while (*str && *str != c)
 				++str;
 		}
-		++str;
+		else
+			++str;
 	}
 	return (cnt);
 }
