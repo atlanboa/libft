@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 20:16:51 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/24 22:29:27 by sanghkim         ###   ########.fr       */
+/*   Updated: 2020/12/30 18:15:22 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,32 @@ static size_t	get_word_cnt(char *str, char c)
 	return (cnt);
 }
 
+static char		**ft_split_free(char **ptr)
+{
+	int		idx;
+
+	if (!ptr)
+		return (NULL);
+	idx = 0;
+	while (ptr[idx])
+	{
+		if (ptr[idx])
+			free(ptr[idx]);
+		idx++;	
+	}
+	if (ptr)
+		free(ptr);
+	return (NULL);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	char	**ret;
 	char	*from;
 	size_t	idx;
-	size_t	size;
 
-	if (!(ret = (char**)malloc(sizeof(char*) * get_word_cnt(s, c) + 1)))
+	if (!s ||
+	!(ret = (char**)malloc(sizeof(char*) * (get_word_cnt((char*)s, c) + 1))))
 		return (NULL);
 	idx = 0;
 	while (*s)
@@ -47,13 +65,13 @@ char			**ft_split(char const *s, char c)
 			from = (char *)s;
 			while (*s && *s != c)
 				++s;
-			size = s - from + 1;
-			if (!(ret[idx] = (char*)malloc(size)))
-				return (NULL);
-			ft_strlcpy(ret[idx++], from, size);
+			if (!(ret[idx] = (char*)malloc(s - from + 1)))
+				return (ft_split_free(ret));
+			ft_strlcpy(ret[idx++], from, s - from + 1);
 		}
-		++s;
+		else
+			++s;
 	}
-	ret[idx] = 0;
+	ret[idx] = NULL;
 	return (ret);
 }

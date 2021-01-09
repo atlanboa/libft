@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 00:41:37 by sangh             #+#    #+#             */
-/*   Updated: 2020/12/21 14:37:02 by sanghkim         ###   ########.fr       */
+/*   Updated: 2020/12/29 20:51:18 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dst, char *src, size_t n)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (i < n && src[i])

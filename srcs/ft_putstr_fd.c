@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 16:42:16 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/26 16:43:06 by sanghkim         ###   ########.fr       */
+/*   Updated: 2020/12/30 17:10:13 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
-		write(fd, s, 1);
+		write(fd, s++, 1);
 }

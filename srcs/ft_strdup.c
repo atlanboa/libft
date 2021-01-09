@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:47:06 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/23 20:35:41 by sanghkim         ###   ########.fr       */
+/*   Updated: 2020/12/29 20:50:01 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strdup(const char *s)
 {
 	size_t	len;
-	size_t	i;
 	char	*dst;
 
 	len = ft_strlen(s);

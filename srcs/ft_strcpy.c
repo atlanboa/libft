@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sangh <sanghkim@student.42seoul.kr>        +#+  +:+       +#+        */
+/*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 00:40:33 by sangh             #+#    #+#             */
-/*   Updated: 2020/11/06 02:37:59 by sangh            ###   ########.fr       */
+/*   Updated: 2020/12/30 17:49:08 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ char	*ft_strcpy(char *dst, char *src)
 	i = -1;
 	while (src[++i])
 		dst[i] = src[i];
+	dst[i] = '\0';
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: sanghkim <atlanboa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:05 by sanghkim          #+#    #+#             */
-/*   Updated: 2020/12/23 20:35:22 by sanghkim         ###   ########.fr       */
+/*   Updated: 2020/12/30 16:30:44 by sanghkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*str;
-	
+	char	*str;
+
 	if (!s || !len || ft_strlen(s) <= start)
-		return (ft_strdup(" "));
+		return (ft_strdup(""));
 	if (!(str = malloc(++len)))
 		return (NULL);
-	ft_strlcpy(str, &s[start], len);
+	ft_strlcpy(str, (char *)&s[start], len);
 	return (str);
 }

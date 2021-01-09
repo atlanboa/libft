@@ -1,27 +1,30 @@
-
-
+NAME = libft.a
+HEADER = libft.h
+CFLAGS = -Wall -Wextra -Werror
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c
+AR = ar rc
+RM = rm -f
 
-SRCDIR = srcs
-INCDIR = includes
+BSRCS = $(wildcard *lst*.c)
+SRCS = $(filter-out $(BSRCS), $(wildcard *.c))
+OBJS = $(SRCS:.c=.o)
+BOBJS = $(BSRCS:.c=.o)
 
-TARGET = libft.a
-SOURCES = $(SRCDIR)/ft_putchar.c $(SRCDIR)/ft_swap.c $(SRCDIR)/ft_putstr.c $(SRCDIR)/ft_strlen.c $(SRCDIR)/ft_strcmp.c
-OBJECTS = $(SOURCES:.c=.o)
+all: $(NAME)
 
-all: $(TARGET)
+$(NAME): $(OBJS)
+	$(AR) $@ $<
+
+bonus: $(BOBJS) $(OBJS)
+	$(AR) $(NAME) $^
 
 %.o: %.c
-	$(CC) $(CFLAGS) $< -o $@ -I $(INCDIR)
-	
-$(TARGET): $(OBJECTS)
-	ar cr $@ $(OBJECTS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS)
+	$(RM) $(OBJS) $(BOBJS)
 
 fclean: clean
-	rm -f $(TARGET)
+	$(RM) $(NAME)
 
 re: fclean all
